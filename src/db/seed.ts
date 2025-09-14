@@ -5,7 +5,6 @@ import bcrypt from "bcryptjs";
 async function seed() {
     console.log("🌱 Seeding database...");
 
-    // Hash password
     const passwordHash = await bcrypt.hash("password", 10);
 
     // Create tenants
@@ -18,7 +17,6 @@ async function seed() {
         .values({ slug: "globex", name: "Globex Inc", plan: "free" })
         .returning();
 
-    // Insert users
     await db.insert(users).values([
         {
             email: "admin@acme.test",

@@ -1,8 +1,7 @@
 import jwt from "jsonwebtoken";
 
-const JWT_SECRET = process.env.JWT_SECRET || "dev-secret"; // local ke liye fallback
+const JWT_SECRET = process.env.JWT_SECRET || "dev-secret";
 
-// JWT payload type
 export type JWTPayload = {
     userId: string;
     tenantId: string;

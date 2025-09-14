@@ -4,9 +4,9 @@ import { relations } from "drizzle-orm";
 // ---------- Tenants ----------
 export const tenants = pgTable("tenants", {
     id: uuid("id").defaultRandom().primaryKey(),
-    slug: varchar("slug", { length: 50 }).notNull().unique(), // acme / globex
+    slug: varchar("slug", { length: 50 }).notNull().unique(),
     name: varchar("name", { length: 100 }).notNull(),
-    plan: text("plan").notNull().default("free"), // free | pro
+    plan: text("plan").notNull().default("free"),
     createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 

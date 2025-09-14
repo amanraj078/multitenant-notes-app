@@ -27,14 +27,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     const [tenantSlug, setTenantSlug] = useState<string | null>(null);
     const [tenantName, setTenantName] = useState<string | null>(null);
 
-    // ✅ localStorage se hydrate
     useEffect(() => {
         const stored = localStorage.getItem("token");
         if (stored) {
             setToken(stored);
             const payload = decodeToken(stored);
             setTenantSlug(payload?.tenantId || null);
-            setTenantName(payload?.tenantName || null); // 👈 extract
+            setTenantName(payload?.tenantName || null);
         }
     }, []);
 

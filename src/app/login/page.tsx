@@ -29,8 +29,8 @@ export default function LoginPage() {
                 return;
             }
 
-            await setToken(data.token); // Wait for token to be set
-            router.push("/notes"); // Then redirect to notes page
+            await setToken(data.token);
+            router.push("/notes");
         } catch (err) {
             setError("Server error");
         }
