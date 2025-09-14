@@ -1,6 +1,10 @@
 export async function withCors(
     req: Request,
-    resBody: Record<string, unknown> | string | null,
+    resBody:
+        | Record<string, unknown>
+        | Record<string, unknown>[]
+        | string
+        | null,
     status = 200
 ) {
     if (req.method === "OPTIONS") {
